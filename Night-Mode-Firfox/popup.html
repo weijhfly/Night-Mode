@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            min-width: 200px;
+        }
+        
+        input[type='range']::-moz-range-thumb {
+            border: 3px solid #1ba1e2;
+            height: 10px;
+            width: 10px;
+            border-radius: 8px;
+            background: #1ba1e2;
+            cursor: pointer;
+        }
+        .content{
+            padding: 10px;
+        }
+        .footer{
+            background: #f0f0f0;
+            color: #707070;
+            text-align: center;
+            font-size: 12px;
+            width: 100%;
+            line-height: 42px;
+        }
+        h1{
+            color: #333;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: 2px;
+        }
+        p{
+            color: #707070;
+            margin-top: 0px;
+            margin-bottom: 18px;
+        }
+        #url{
+            color: #4688f1;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="content">
+        <h1 class="title"></h1>
+        <div class="range-group" style="margin-top: 10px;">
+            <input type="range" name="points" min="0" max="100" id="range" />
+        </div>
+    </div>
+    <div class="footer">Copyright © 2019-<span id="js-time"></span> <a id="url">weijhfly</a></div>
+</body>
+<script src="popup.js"></script>
+</html>

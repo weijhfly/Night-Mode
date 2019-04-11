@@ -1,0 +1,12 @@
+body:after{
+	content: '';
+	pointer-events: none;
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 99999;
+    opacity: .3;
+    top: 0;
+    left: 0;
+}
