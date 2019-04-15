@@ -1,12 +1,9 @@
 {
 	"name": "__MSG_title__",
-	"version": "1.0",
+	"version": "1.1",
 	"description": "__MSG_description__",
 	"permissions": ["tabs","activeTab","storage"],
-	"background": {
-	  "scripts": ["js/background.js"],
-	  "persistent": false
-	},
+	"background": {"scripts": ["js/background.js"]},
 	"icons":
     {
         "16": "img/icon-16.png",
@@ -27,5 +24,5 @@
         }
     ],
 	"manifest_version": 2,
-	"default_locale": "zh_CN"
+	"default_locale": "en"
 }
