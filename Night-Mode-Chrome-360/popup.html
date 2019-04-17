@@ -1,84 +1,41 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="zh-CN">
 <head>
-
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <style>
-        html, body{
-            margin: 0;
-            padding: 0;
-            min-width: 200px;
-        }
-        input[type=range] {
-            -webkit-appearance: none;
-            width: 200px;
-            border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
-            background: -webkit-linear-gradient(rgb(31, 169, 255), rgb(31, 169, 255)) no-repeat;
-            background-size: 50% 100%;
-        }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-        } 
-        input[type=range]::-webkit-slider-runnable-track {
-            height: 4px;
-            border-radius: 10px; /*将轨道设为圆角的*/
-            /* background: #eee; */
-            box-shadow: 0 0.2px 0.2px #fff, inset 0 .125em .125em rgba(0,0,0,0.1); /*轨道内置阴影效果*/
-        }
-        input[type=range]:focus {
-            outline: none;
-        }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 18px;
-            width: 18px;
-            margin-top: -8px; /*使滑块超出轨道部分的偏移量相等*/
-            background: #ffffff; 
-            border-radius: 50%; /*外观设置为圆形*/
-            border: 1px solid rgba(0,0,0,0.2);
-            box-shadow: 0 1px 1px rgb(0,0,0,0.1); /*添加底部阴影*/
-        }
-        .content{
-            padding: 10px;
-        }
-        .footer{
-            background: #f0f0f0;
-            color: #707070;
-            text-align: center;
-            font-size: 12px;
-            width: 100%;
-            line-height: 42px;
-        }
-        h1{
-            color: #333;
-            font-size: 14px;
-            margin-top: 5px;
-            margin-bottom: 2px;
-        }
-        p{
-            color: #707070;
-            margin-top: 0px;
-            margin-bottom: 18px;
-        }
-        #url{
-            color: #4688f1;
-            cursor: pointer;
-        }
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0">
+    <title>夜间助手</title>
+    <link rel="stylesheet" href="./css/popup.css">
 </head>
-
 <body>
     <div class="content">
-        <h1 class="title"></h1>
-        <div class="range-group" style="margin-top: 10px;">
+        <header>
+            <span class="js-lang">__MSG_title__</span>
+            <button type="button" class="switch-btn">on</button>
+        </header>
+        <main>
+            <div class="title js-lang" style="margin-bottom: 5px;">__MSG_level__</div>
             <input type="range" name="points" min="0" max="100" id="range" />
-        </div>
+            <div id="colors" class="title js-lang">__MSG_background__</div>
+            <ul>
+                <li style="background-color:#000000;" data-color="#000000"></li>
+                <li style="background-color:#fbd691;" data-color="#fbd691"></li>
+                <li style="background-color:#fac563;" data-color="#fac563"></li>
+                <li style="background-color:#ffa500;" data-color="#ffa500"></li>
+
+                <li style="background-color:#ff9329;" data-color="#ff9329"></li>
+                <li style="background-color:#ff8100;" data-color="#ff8100"></li>
+                <li style="background-color:#f55353;" data-color="#f55353"></li>
+                <li style="background-color:#e45261;" data-color="#e45261"></li>
+
+                <li style="background-color:#f2f2f2;" data-color="#f2f2f2"></li>
+                <li style="background-color:#cce8cf;" data-color="#cce8cf"></li>
+                <li style="background-color:#e1e6d7;" data-color="#e1e6d7"></li>
+                <li style="background-color:#008000;" data-color="#008000"></li>
+            </ul>
+         </main>
     </div>
     <div class="footer">Copyright © 2019-<span id="js-time"></span> <a id="url">weijhfly</a></div>
+    <script src="./js/args.js"></script>
+    <script src="popup.js"></script>
 </body>
-<script src="popup.js"></script>
 </html>

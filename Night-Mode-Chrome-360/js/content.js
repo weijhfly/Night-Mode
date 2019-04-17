@@ -1,17 +1,28 @@
-//document.addEventListener("DOMContentLoaded", ()=>{
-   chrome.storage.sync.get('degree', function(item) {
-   	var degree = 0.3;
+var args = ARGS,
+    temp;
 
-   	if(item.degree != undefined){
-   		degree = item.degree;
-   	}
+chrome.storage.local.get(args, function(item) {
+  temp = item;
+  var mask = document.createElement("div");
 
-    var style = document.createElement("style");
+  mask.id = "night-mask",
+  document.documentElement.appendChild(mask);
+  setStyle(item);
+})
 
-	style.type = 'text/css';
-	style.id = 'night-css';
-	style.innerText = 'body:after{opacity: '+ degree +';}';
-	document.head.appendChild(style);
-   })
+chrome.storage.onChanged.addListener(function(obj){
+  var key = Object.keys(obj)[0],
+      val = obj[key].newValue;
 
-//});
+  temp[key] = val;
+  setStyle(temp);
+})
+
+function setStyle(obj){
+  var mask = document.querySelector("#night-mask"),
+      css = 'position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 999999;pointer-events: none;'+
+      'mix-blend-mode: multiply;transition: opacity 0.1s ease 0s;opacity:$opa;display:$dis;background: $bac;';
+
+  css = css.replace('$opa',obj.range/100).replace('$dis',obj.on? 'block':'none').replace('$bac',obj.color);
+  mask.setAttribute("style", css);
+}

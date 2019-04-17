@@ -3,6 +3,12 @@
         "message": "Night Assistant"
     },
     "description": {
-        "message": "Helps you reduce screen brightness, reduce irritation, and create a quiet environment while browsing the web."
+        "message": "Adjusting the background color of the web page helps protect your eyes and creates a quiet, gentle Internet environment."
+    },
+    "level": {
+        "message": "level:"
+    },
+    "background": {
+        "message": "background:"
     }
 }

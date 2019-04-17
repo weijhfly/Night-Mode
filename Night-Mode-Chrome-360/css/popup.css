@@ -1,0 +1,129 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    background: #363636;
+    color: #eee;
+    font-size: 12px;
+}
+ol,
+ul,
+li{list-style: none;margin:0;padding: 0;}
+input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    cursor: pointer;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    height: 2px;
+    background: #5f5e5b;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: lightgray;
+    margin-top: -7px;
+    cursor: pointer;
+    z-index: 100;
+    position: relative;
+}
+input[type=range]:focus {
+    outline: none;
+}
+.content {
+    padding: 10px 15px 0;
+    margin-bottom: -5px;
+}
+.footer {
+    text-align: center;
+    font-size: 12px;
+    width: 100%;
+    line-height: 42px;
+}
+header {
+    position: relative;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+p {
+    color: #707070;
+    margin-top: 0px;
+    margin-bottom: 18px;
+}
+#url {
+    color: #4688f1;
+    cursor: pointer;
+}
+.range-group {
+    text-align: center;
+}
+.switch-btn {
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width:50px;
+    height:24px;
+    border: none;
+    background: #4d90fd;
+    color: #fff;
+    text-align: left;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    line-height: 23px;
+    padding: 0 9px;
+}
+.switch-btn:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border-radius: 100%;
+}
+.switch-btn.gray {
+    text-align: right;
+}
+.switch-btn.gray {
+    background: #e5e5e5;
+    color: #555;
+}
+.switch-btn.gray:after {
+    right: auto;
+    left: 2px;
+}
+.title{
+    margin-top: 20px;
+}
+main li{
+    width: 60px;
+    height: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+main ul{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+main .active{
+    background-image: url(../img/show.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 22px;
+}

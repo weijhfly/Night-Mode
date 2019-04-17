@@ -2,7 +2,6 @@
 	"name": "__MSG_title__",
 	"version": "1.1",
 	"description": "__MSG_description__",
-	"permissions": ["tabs","activeTab","storage"],
 	"background": {"scripts": ["js/background.js"]},
 	"icons":
     {
@@ -18,10 +17,14 @@
     [
         {
             "matches": ["<all_urls>"],
-            "js": ["js/content.js"],
-            "css": ["css/index.css"],
+            "js": ["js/args.js","js/content.js"],
             "run_at": "document_start"
         }
+    ],
+    "permissions": [
+        "<all_urls>",
+        "tabs",
+        "storage"
     ],
 	"manifest_version": 2,
 	"default_locale": "zh_CN"

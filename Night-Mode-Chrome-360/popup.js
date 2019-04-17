@@ -1,45 +1,84 @@
-var range = document.body.querySelector('#range');
+var range = document.body.querySelector('#range'),
+    args = ARGS,
+    lis = document.querySelectorAll('li'),
+    onBtn = document.querySelector(".switch-btn");
 
-range.addEventListener('input', (e)=>{
-    range.style.backgroundSize = range.value + '% 100%';
+range.addEventListener('input', function(){
+  setting('range',range.value);
+});
+chrome.storage.local.get(args, function(item) {
+  if(!item.on){
+    onBtn.className = 'switch-btn gray';
+    onBtn.innerText = 'off';
+  }
+  lis.forEach(function(li){
+    if(item.color == li.getAttribute('data-color')){
+      li.className = 'active';
+      return false;
+    }
+  })
+  range.value = item.range;
+})
 
-    chrome.storage.sync.set({degree:range.value/100}, (item)=>{
-    var code = 'var el = document.querySelector("#night-css");'+
-      'if(el){'+
-        'el.innerText = "body:after{opacity:$val}";'+
-      '}else{'+
-        'var style = document.createElement("style");'+
+onBtn.addEventListener('click',function(){
+  var that = this;
 
-        'style.type = "text/css";'+
-        'style.id = "night-css";'+
-        'style.innerText = "body:after{opacity: $val;}";'+
-        'document.head.appendChild(style);'+
-      '}';
-
-      code = code.replace('$val',range.value/100);
-
-      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        chrome.tabs.executeScript(
-          tabs[0].id,
-          {code: code});
-      });
-    })
+  if(that.className.indexOf('gray') == -1){
+    that.className = 'switch-btn gray';
+    that.innerText = 'off';
+    setting('on',false);
+  }else{
+    that.className = 'switch-btn';
+    that.innerText = 'on';
+    setting('on',true);
+  }
 });
 
-chrome.storage.sync.get('degree', function(item) {
-  var degree = 0.3;
+lis.forEach(function(item){
+  item.addEventListener('click',function(){
+    var that = this;
 
-  if(item.degree != undefined){
-    degree = item.degree;
-  }
-  degree = degree*100;
-  range.value = degree;
-  range.style.backgroundSize = degree + '% 100%';
+    if(!that.className){
+      lis.forEach(function(item){
+        item.className = '';
+      })
+      that.className = 'active';
+      setting('color',that.getAttribute('data-color'));
+    }
+  });
 })
-var urlEle = document.body.querySelector("#url");
+
+var urlEle = document.querySelector("#url");
 urlEle.addEventListener('click', function(){
     chrome.tabs.create({url: 'https://github.com/weijhfly'});
 });
 
-document.querySelector(".title").innerText = chrome.i18n.getMessage('title');
+var els = document.querySelectorAll('.js-lang');
+
+els.forEach(function(item){
+  var text = item.innerText,
+      key = text.replace(/_|MSG/g,'');
+
+  item.innerText = chrome.i18n.getMessage(key);
+})
+
 document.getElementById('js-time').innerText = new Date().getFullYear();
+
+addForEachToNodeList ();
+function addForEachToNodeList () {
+    if (window.NodeList && !NodeList.prototype.forEach) {
+        NodeList.prototype.forEach = function (callback, thisArg) {
+            thisArg = thisArg || window
+            for (var i = 0; i < this.length; i++) {
+                callback.call(thisArg, this[i], i, this)
+            }
+        }
+    }
+}
+
+function setting(key,value){
+  var obj = {};
+
+  obj[key] = value;
+  chrome.storage.local.set(obj);
+}
