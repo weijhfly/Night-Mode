@@ -3,3 +3,6 @@
 
 ## 演示   
 ![Night-Mode](https://weijhfly.github.io/images/unnamed.png)
+
+## 说明
+参考过Night Shift等一些夜间扩展，此扩展背景色更实用、体积更小、兼容性更好，且覆盖了谷歌、火狐、360浏览器。
