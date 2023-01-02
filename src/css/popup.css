@@ -1,0 +1,263 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  background: #363636;
+  color: #eee;
+  font-size: 12px;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 2px;
+  background: #5f5e5b;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: lightgray;
+  margin-top: -7px;
+  cursor: pointer;
+  z-index: 100;
+  position: relative;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+.container {
+  padding: 10px 15px 0;
+  margin-bottom: -5px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+  line-height: 42px;
+}
+
+header {
+  position: relative;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+p {
+  color: #707070;
+  margin-top: 0px;
+  margin-bottom: 18px;
+}
+
+#url {
+  color: #4688f1;
+  cursor: pointer;
+}
+
+.range-group {
+  text-align: center;
+}
+
+.switch-btn {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  width: 50px;
+  height: 24px;
+  border: none;
+  background: #4d90fd;
+  color: #fff;
+  text-align: left;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+  line-height: 23px;
+  padding: 0 9px;
+}
+
+.switch-btn:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  border-radius: 100%;
+}
+
+.switch-btn.gray {
+  text-align: right;
+}
+
+.switch-btn.gray {
+  background: #e5e5e5;
+  color: #555;
+}
+
+.switch-btn.gray:after {
+  right: auto;
+  left: 2px;
+}
+
+.title {
+  margin-top: 20px;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.color-list li {
+  width: 60px;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.color-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+main .active {
+  background-image: url(../img/show.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 22px;
+}
+
+#color-picker {
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+#donations {
+  margin-left: 5px;
+  color: rgba(103, 194, 58, 0.8);
+  cursor: pointer;
+}
+
+#donations-dialog {
+  position: fixed;
+  z-index: 5000;
+  width: 80%;
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+  color: #333;
+  font-size: 14px;
+  display: none;
+}
+
+.donations-dialog__img {
+  width: 110px;
+  height: 110px;
+}
+
+.donations-dialog__header {
+  position: relative;
+  line-height: 45px;
+  font-size: 16px;
+  color: #000;
+}
+
+.donations-dialog__del {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.donations-dialog__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.donations-dialog__tab {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #eee;
+}
+
+.donations-dialog__tab.active {
+  background: #67c23a;
+  border: none;
+  color: #fff;
+}
+
+.donations-dialog__desc {
+  padding: 15px;
+  color: #666;
+  font-size: 12px;
+}
+
+.donations-dialog__footer {
+  display: flex;
+  align-items: center;
+  line-height: 35px;
+}
+
+.donations-dialog__footer-btn {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #eee;
+}
+
+.donations-dialog__footer-btn.active {
+  color: #67c23a;
+  font-weight: bold;
+}
+
+.donations-dialog__footer-btn:last-child {
+  margin-left: -1px;
+}

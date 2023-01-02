@@ -1,0 +1,41 @@
+{
+  "title": {
+    "message": "Night Assistant"
+  },
+  "description": {
+    "message": "Set the background color of the webpage to protect your eyes. and create a beautiful and comfortable internet environment."
+  },
+  "level": {
+    "message": "Level:"
+  },
+  "color_picker": {
+    "message": "Color Picker:"
+  },
+  "fast_select": {
+    "message": "Fast Select:"
+  },
+  "donations": {
+    "message": "Donations"
+  },
+  "support_developer": {
+    "message": "Support Developer"
+  },
+  "weChat": {
+    "message": "WeChat"
+  },
+  "alipay": {
+    "message": "Alipay"
+  },
+  "donations_desc": {
+    "message": "Give the author a lollipop 🍭. With your support, the Night Assistant can be updated better and faster."
+  },
+  "donated": {
+    "message": "Have Donated"
+  },
+  "thanks": {
+    "message": "Thanks"
+  },
+  "next_time": {
+    "message": "Next Time"
+  }
+}

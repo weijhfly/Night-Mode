@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <span class="js-lang">_MSG_title</span>
+        <button type="button" class="switch-btn">on</button>
+      </header>
+      <main>
+        <div class="title js-lang" style="margin-bottom: 5px">_MSG_level</div>
+        <input type="range" name="points" min="0" max="100" id="range" />
+
+        <div class="title js-lang">_MSG_color_picker</div>
+        <div class="content"><div id="color-picker"></div></div>
+
+        <div class="title js-lang">_MSG_fast_select</div>
+        <div class="content">
+          <ul class="color-list">
+            <li style="background-color: #000000" data-color="#000000"></li>
+            <li style="background-color: #fff68f" data-color="#fff68f"></li>
+            <li style="background-color: #fac563" data-color="#fac563"></li>
+            <li style="background-color: #ffa500" data-color="#ffa500"></li>
+
+            <li style="background-color: #ff9329" data-color="#ff9329"></li>
+            <li style="background-color: #ff8100" data-color="#ff8100"></li>
+            <li style="background-color: #f55353" data-color="#f55353"></li>
+            <li style="background-color: #e45261" data-color="#e45261"></li>
+
+            <li style="background-color: #f2f2f2" data-color="#f2f2f2"></li>
+            <li style="background-color: #e1e6d7" data-color="#e1e6d7"></li>
+            <li style="background-color: #e3edcd" data-color="#e3edcd"></li>
+            <li style="background-color: #cce8cf" data-color="#cce8cf"></li>
+          </ul>
+        </div>
+      </main>
+    </div>
+    <div class="footer">
+      Copyright © 2019-<span id="js-time"></span> <a id="url">weijhfly</a
+      ><a id="donations" class="js-lang">_MSG_donations</a>
+    </div>
+
+    <!-- 打赏 -->
+    <div id="donations-dialog">
+      <div class="donations-dialog__header">
+        <span class="js-lang">_MSG_support_developer</span>
+        <div class="donations-dialog__del js-dialog-close">x</div>
+      </div>
+      <div class="donations-dialog__tabs">
+        <div class="donations-dialog__tab active" data-pay="weChat">
+          <span class="js-lang">_MSG_weChat</span>
+        </div>
+        <div class="donations-dialog__tab" data-pay="alipay">
+          <span class="js-lang">_MSG_alipay</span>
+        </div>
+      </div>
+      <img class="donations-dialog__img" src="./img/weChat.jpeg" />
+      <div class="donations-dialog__desc js-lang">_MSG_donations_desc</div>
+
+      <div class="donations-dialog__footer">
+        <div class="donations-dialog__footer-btn active js-dialog-close">
+          <span class="js-lang">_MSG_donated</span>
+        </div>
+        <div class="donations-dialog__footer-btn js-dialog-close">
+          <span class="js-lang">_MSG_next_time</span>
+        </div>
+      </div>
+    </div>
+    <script src="./js/args.js"></script>
+    <script src="./libs/colorpicker.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

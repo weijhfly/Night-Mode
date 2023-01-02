@@ -1,0 +1,26 @@
+{
+  "name": "__MSG_title__",
+  "version": "1.5",
+  "description": "__MSG_description__",
+  "background": { "service_worker": "js/background.js" },
+  "icons": {
+    "16": "img/icon-16.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "img/icon-48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/args.js", "js/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "permissions": ["storage"],
+  "manifest_version": 3,
+  "default_locale": "en"
+}
